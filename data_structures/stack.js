@@ -21,13 +21,22 @@ class Stack {
     // delete an element from the top of the stack
     pop() {
         if (this.isEmpty()) return console.log("Stack is empty")
-        this.data.pop()
         this.top--
+        return this.data.pop()
     }
 
     // get the top element of the stack
     peek() {
         return this.data[this.top - 1];
+    }
+
+    // reverse stack elements
+    reverse() {
+        let tempStack = new Stack()
+        while (!this.isEmpty()) {
+            tempStack.push(this.pop())
+        }
+        return tempStack
     }
 
     // print the elements of the stack
@@ -39,10 +48,11 @@ class Stack {
 
 }
 
+
 let stack = new Stack()
 
-stack.push(4)
-stack.push(5)
-stack.push(6)
-stack.pop()
-stack.print()
+stack.push(1)
+stack.push(2)
+stack.push(3)
+stack.reverse().print()
+module.exports = Stack
