@@ -12,6 +12,13 @@
                nums2 = [2,5,6], n = 3
         Output: [1,2,2,3,5,6]
 */
+const merge_sorted_array_2 = (nums1, m, nums2, n) => {
+    nums1.splice(m, nums1.length - m) //Remove zeros
+    Array.prototype.push.apply(nums1, nums2) //Merge two arrays in one
+    nums1.sort((a, b) => a - b) //Sort
+    return nums1
+}
+
 
 const merge_sorted_array = (nums1, m, nums2, n) => {
     let first = m - 1,
@@ -34,4 +41,4 @@ const merge_sorted_array = (nums1, m, nums2, n) => {
     return nums1
 }
 
-console.log(merge_sorted_array([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3))
+console.log(merge_sorted_array_2([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3))

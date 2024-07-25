@@ -14,7 +14,7 @@
 // We can solve this problem using binary search
 
 // Find first index
-const findFirst = (arr, target) => {
+findFirst = (arr, target) => {
     if (arr[0] === target) return 0;
 
     let start = 0,

@@ -21,8 +21,8 @@ const move_zeros = (nums) => {
     }
 
     // Make elements equal to zero from the last non zero element 
-    for (i = lastNonZeroIdx; i < nums.length; i++) {
-        nums[i] = 0
+    for (; lastNonZeroIdx < nums.length; lastNonZeroIdx++) {
+        nums[lastNonZeroIdx] = 0
     }
     return nums
 }
